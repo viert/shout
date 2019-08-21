@@ -7,3 +7,4 @@ this project provides a WriteCloser adapter to a libshout connection so streamin
   * non-blocking interface
   * metadata functions
   * tidying up
+  * docs and examples
