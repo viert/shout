@@ -3,7 +3,7 @@ This is a proof-of-concept alternative libshout bindings for golang. Unlike more
 this project provides a WriteCloser adapter to a libshout connection so streaming a file is as easy as `io.Copy(wr, f)`
 
 ## Example
-```
+```go
 package main
 
 import (
