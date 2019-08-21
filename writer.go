@@ -65,6 +65,13 @@ func Connect(cfg *Config) (*Writer, error) {
 	// setting stream protocol
 	C.shout_set_protocol(shout, C.uint(cfg.Proto))
 
+	res := int(C.shout_open(shout))
+	if res != int(ShoutErrorSuccess) {
+		C.shout_free(shout)
+		err := convError(res)
+		return nil, err
+	}
+
 	w := &Writer{cshout: shout}
 	runtime.SetFinalizer(w, finalize)
 	return w, nil
